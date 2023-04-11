@@ -1,7 +1,7 @@
 [project]
 name = "OpenRAIL"
 version = "0.0.1"
-dependencies = []
+dependencies = ["tomlkit"]
 description = "Automatation of OpenROAD flows"
 authors = [
     { name = "Jonathan Tremesaygues", email = "jonathan.tremesaygues@slaanesh.org" },
