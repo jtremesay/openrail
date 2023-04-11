@@ -20,11 +20,12 @@ from pathlib import Path
 from typing import Optional, Sequence
 
 from openrail.design import Design
+from openrail.platform import Platform
 
 logger = logging.getLogger(__name__)
 
 
-def cmd_design_new(args: Namespace):
+def cmd_design_new(args: Namespace) -> None:
     output_dir = Path(args.directory) if args.directory is not None else Path()
 
     design_dir_path = output_dir / args.name
@@ -51,6 +52,10 @@ def cmd_design_new(args: Namespace):
 
     # Save design.toml
     design.save()
+
+
+def cmd_impl_add(args: Namespace) -> None:
+    print(args)
 
 
 def main(args: Optional[Sequence[str]] = None) -> None:
@@ -82,6 +87,25 @@ def main(args: Optional[Sequence[str]] = None) -> None:
     )
     design_new_parser.add_argument("name")
     design_new_parser.set_defaults(func=cmd_design_new)
+
+    ## Implementation
+    impl_parser = sub_parsers.add_parser(
+        "impl", help="Implementation related commands"
+    )
+    impl_sub_parsers = impl_parser.add_subparsers()
+
+    # Implementation add
+    impl_add_parser = impl_sub_parsers.add_parser(
+        "add", help="Add a new implementation to the design"
+    )
+    impl_add_parser.add_argument(
+        "platform",
+        type=Platform,
+        choices=tuple(Platform),
+        help="Target platform",
+    )
+    impl_add_parser.add_argument("name", nargs="?", help="Implementation name")
+    impl_add_parser.set_defaults(func=cmd_impl_add)
 
     # Parse args and run command
     parsed_args = parser.parse_args(args)
