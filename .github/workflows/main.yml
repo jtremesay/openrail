@@ -1,0 +1,18 @@
+name: Build image
+
+on:    
+  push:
+    branches: [ "main" ]
+    
+jobs:
+  build:
+    strategy:
+      matrix:
+        platform: ["nangate45", "sky130hd", "sky130hs"]
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        uses: actions/checkout@v4
+      - 
+        name: Run flow
+        run: make ${{ matrix.os }}

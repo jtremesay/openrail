@@ -1,0 +1,8 @@
+# Envrc work dir
+/.direnv/
+
+# Generated stuff
+/out/
+
+# Reference codes
+/third-party/
