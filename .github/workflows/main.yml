@@ -15,25 +15,25 @@ jobs:
         uses: actions/checkout@v4
       - 
         name: Run flow
-        run: make ${{ matrix.os }}
+        run: make ${{ matrix.platform }}
       - 
         name: 'Upload results'
         uses: actions/upload-artifact@v3
         with:
-          name: results-${{ matrix.os }}
-          path: out/results/${{ matrix.os }}
+          name: results-${{ matrix.platform }}
+          path: out/results/${{ matrix.platform }}
           retention-days: 7
       - 
         name: 'Upload reports'
         uses: actions/upload-artifact@v3
         with:
-          name: reports-${{ matrix.os }}
-          path: out/reports/${{ matrix.os }}
+          name: reports-${{ matrix.platform }}
+          path: out/reports/${{ matrix.platform }}
           retention-days: 7
       - 
         name: 'Upload logs'
         uses: actions/upload-artifact@v3
         with:
-          name: logs-${{ matrix.os }}
-          path: out/logs/${{ matrix.os }}
+          name: logs-${{ matrix.platform }}
+          path: out/logs/${{ matrix.platform }}
           retention-days: 7
