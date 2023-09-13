@@ -8,7 +8,7 @@ nangate45 sky130hd sky130hs:
 		-v $(PWD)/out/logs/:/OpenROAD-flow-scripts/flow/logs/ \
 		-v $(PWD)/out/reports/:/OpenROAD-flow-scripts/flow/reports/ \
 		-v $(PWD)/out/results/:/OpenROAD-flow-scripts/flow/results/ \
-		$(IMAGE) bash -c "source env.sh && cd flow && make DESIGN_CONFIG=./designs/$@/raven-picorv32/config.mk"
+		$(IMAGE) bash -c "source env.sh && cd flow && make DESIGN_CONFIG=./designs/$@/raven-picorv32/config.mk generate_abstract"
 
 shell:
 	docker run \
