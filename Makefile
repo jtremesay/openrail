@@ -2,7 +2,7 @@ IMAGE ?= killruana/openroad:ubuntu22.04
 
 all: nangate45 sky130hd sky130hs
 
-nangate45 sky130hs sky130hs:
+nangate45 sky130hd sky130hs:
 	docker run \
 		-v $(PWD)/designs/:/OpenROAD-flow-scripts/flow/designs/ \
 		-v $(PWD)/out/logs/:/OpenROAD-flow-scripts/flow/logs/ \
