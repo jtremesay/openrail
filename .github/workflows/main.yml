@@ -1,4 +1,4 @@
-name: Build image
+name: Run flow
 
 on:    
   push:
@@ -16,3 +16,24 @@ jobs:
       - 
         name: Run flow
         run: make ${{ matrix.os }}
+      - 
+        name: 'Upload results'
+        uses: actions/upload-artifact@v3
+        with:
+          name: results-${{ matrix.os }}
+          path: out/results/${{ matrix.os }}
+          retention-days: 7
+      - 
+        name: 'Upload reports'
+        uses: actions/upload-artifact@v3
+        with:
+          name: reports-${{ matrix.os }}
+          path: out/reports/${{ matrix.os }}
+          retention-days: 7
+      - 
+        name: 'Upload logs'
+        uses: actions/upload-artifact@v3
+        with:
+          name: logs-${{ matrix.os }}
+          path: out/logs/${{ matrix.os }}
+          retention-days: 7
