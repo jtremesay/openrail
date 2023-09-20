@@ -38,61 +38,61 @@ module IOTile(
 
     // IC
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic0(
+    Multiplexer #(.WIDTH(4)) mux_ic0(
         .data_in(data_from_io),
         .data_out(data_to_ic[0]),
         .config_in(c_mux_ic0)
     );
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic1(
+    Multiplexer #(.WIDTH(4)) mux_ic1(
         .data_in(data_from_io),
         .data_out(data_to_ic[1]),
         .config_in(c_mux_ic1)
     );
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic2(
+    Multiplexer #(.WIDTH(4)) mux_ic2(
         .data_in(data_from_io),
         .data_out(data_to_ic[2]),
         .config_in(c_mux_ic2)
     );
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic3(
+    Multiplexer #(.WIDTH(4)) mux_ic3(
         .data_in(data_from_io),
         .data_out(data_to_ic[3]),
         .config_in(c_mux_ic3)
     );
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic4(
+    Multiplexer #(.WIDTH(4)) mux_ic4(
         .data_in(data_from_io),
         .data_out(data_to_ic[4]),
         .config_in(c_mux_ic4)
     );
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic5(
+    Multiplexer #(.WIDTH(4)) mux_ic5(
         .data_in(data_from_io),
         .data_out(data_to_ic[5]),
         .config_in(c_mux_ic5)
     );
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic6(
+    Multiplexer #(.WIDTH(4)) mux_ic6(
         .data_in(data_from_io),
         .data_out(data_to_ic[6]),
         .config_in(c_mux_ic6)
     );
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic7(
+    Multiplexer #(.WIDTH(4)) mux_ic7(
         .data_in(data_from_io),
         .data_out(data_to_ic[7]),
         .config_in(c_mux_ic7)
     );
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic8(
+    Multiplexer #(.WIDTH(4)) mux_ic8(
         .data_in(data_from_io),
         .data_out(data_to_ic[8]),
         .config_in(c_mux_ic8)
     );
     
-    Multiplexer #(.SEL_WIDTH(2)) mux_ic9(
+    Multiplexer #(.WIDTH(4)) mux_ic9(
         .data_in(data_from_io),
         .data_out(data_to_ic[9]),
         .config_in(c_mux_ic9)
@@ -101,25 +101,25 @@ module IOTile(
 
     // IO
     
-    Multiplexer #(.SEL_WIDTH(4)) mux_io0(
+    Multiplexer #(.WIDTH(10)) mux_io0(
         .data_in(data_from_ic),
         .data_out(data_to_io[0]),
         .config_in(c_mux_io0)
     );
     
-    Multiplexer #(.SEL_WIDTH(4)) mux_io1(
+    Multiplexer #(.WIDTH(10)) mux_io1(
         .data_in(data_from_ic),
         .data_out(data_to_io[1]),
         .config_in(c_mux_io1)
     );
     
-    Multiplexer #(.SEL_WIDTH(4)) mux_io2(
+    Multiplexer #(.WIDTH(10)) mux_io2(
         .data_in(data_from_ic),
         .data_out(data_to_io[2]),
         .config_in(c_mux_io2)
     );
     
-    Multiplexer #(.SEL_WIDTH(4)) mux_io3(
+    Multiplexer #(.WIDTH(10)) mux_io3(
         .data_in(data_from_ic),
         .data_out(data_to_io[3]),
         .config_in(c_mux_io3)

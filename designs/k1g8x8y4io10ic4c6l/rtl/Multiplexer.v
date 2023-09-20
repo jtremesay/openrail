@@ -1,7 +1,7 @@
-module Multiplexer #(parameter SEL_WIDTH=1) (
-    input [2 ** SEL_WIDTH - 1:0] data_in,
+module Multiplexer #(parameter WIDTH=1) (
+    input [WIDTH - 1:0] data_in,
     output data_out,
-    input [SEL_WIDTH - 1:0] config_in
+    input [$clog2(WIDTH) - 1:0] config_in
 );
-    assign data_out = data_in[config_in];
+    assign data_out = config_in < WIDTH ? data_in[config_in] : 0;
 endmodule
