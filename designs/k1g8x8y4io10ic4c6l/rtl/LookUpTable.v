@@ -7,7 +7,7 @@ module LookUpTable(
     wire [63:0] c_truth_table = config_in[63:0];
 
     // Implement the LUT with a mux
-    MultiplexerLUT lut(
+    Multiplexer #(.SEL_WIDTH(6)) lut(
         .data_in(c_truth_table),
         .data_out(data_out),
         .config_in(data_in)
