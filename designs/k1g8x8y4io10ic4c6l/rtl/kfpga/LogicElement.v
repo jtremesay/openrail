@@ -30,6 +30,6 @@ module LogicElement #(parameter WIDTH=6) (
     end
 
     // Choose between the sequential and comb output
-    assign data_out = c_comb_out ? lut_z : lut_z_seq;
+    assign data_out = lut_z_seq; // c_comb_out ? lut_z : lut_z_seq;
 
 endmodule
