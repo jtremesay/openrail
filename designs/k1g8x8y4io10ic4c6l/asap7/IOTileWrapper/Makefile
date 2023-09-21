@@ -1,7 +1,7 @@
 
 IMAGE ?= killruana/openroad:latest
 DESIGN_PARENT ?= k1g8x8y4io10ic4c6l
-DESIGN ?= LogicTile
+DESIGN ?= IOTileWrapper
 PLATFORM ?= asap7
 
 CURRENT_DIR ?= $(PWD)

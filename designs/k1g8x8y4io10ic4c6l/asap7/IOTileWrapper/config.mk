@@ -2,10 +2,10 @@ export PLATFORM               = asap7
 
 
 DESIGN_PARENT = k1g8x8y4io10ic4c6l
-export DESIGN_NAME            = IOTile
+export DESIGN_NAME            = IOTileWrapper
 export DESIGN_NICKNAME        = $(DESIGN_PARENT)_$(DESIGN_NAME)
 
-export VERILOG_FILES = $(sort $(wildcard ./designs/src/$(DESIGN_PARENT)/*.v))
+export VERILOG_FILES = $(sort $(wildcard ./designs/src/$(DESIGN_PARENT)/*.v) $(wildcard ./designs/src/$(DESIGN_PARENT)/kfpga/*.v))
 export SDC_FILE      = ./designs/$(PLATFORM)/$(DESIGN_PARENT)/$(DESIGN_NAME)/constraint.sdc
 
 export ABC_AREA               = 1

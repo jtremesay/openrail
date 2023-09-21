@@ -1,4 +1,4 @@
-current_design LogicTile
+current_design LogicTileWrapper
 
 set clk_name  clk
 set clk_port_name clock

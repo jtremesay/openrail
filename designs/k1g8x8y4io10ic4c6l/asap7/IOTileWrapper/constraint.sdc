@@ -1,4 +1,4 @@
-current_design IOTile
+current_design IOTileWrapper
 
 set clk_name  clk
 set clk_port_name clock
