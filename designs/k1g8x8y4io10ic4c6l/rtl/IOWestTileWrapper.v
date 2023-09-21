@@ -1,4 +1,4 @@
-module IOTileWrapper (
+module IOWestTileWrapper (
     input [3:0] data_from_io,
     output [3:0] data_to_io,
     input [9:0] data_from_ic,

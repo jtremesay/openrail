@@ -1,6 +1,6 @@
 include designs/asap7/k1g8x8y4io10ic4c6l/common_sub.mk
 
-export DESIGN_NAME            = LogicTileWrapper
+export DESIGN_NAME            = IONorthTileWrapper
 export DESIGN_NICKNAME        = $(CORE_NAME)_$(DESIGN_NAME)
 
 export SDC_FILE      = ./designs/$(PLATFORM)/$(CORE_NAME)/$(DESIGN_NAME)/constraint.sdc
