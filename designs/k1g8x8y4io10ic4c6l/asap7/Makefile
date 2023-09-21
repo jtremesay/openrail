@@ -21,7 +21,7 @@ top: $(OUT_DIR)
 		-v $(LOGS_DIR)/:/OpenROAD-flow-scripts/flow/logs/$(PLATFORM) \
 		-v $(REPORTS_DIR)/:/OpenROAD-flow-scripts/flow/reports/$(PLATFORM) \
 		-v $(RESULTS_DIR)/:/OpenROAD-flow-scripts/flow/results/$(PLATFORM) \
-		$(IMAGE) bash -c "source env.sh && cd flow && make DESIGN_CONFIG=./designs/$(PLATFORM)/$(DESIGN)/config.mk generate_abstract"
+		$(IMAGE) bash -c "source env.sh && cd flow && make DESIGN_CONFIG=./designs/$(PLATFORM)/$(DESIGN)/config.mk"
 
 .PHONY: shell
 shell:
