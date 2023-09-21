@@ -31,8 +31,9 @@ module kFPGACoreWrapper(
         .data_west_in(data_west_in),
         .data_west_out(data_west_out),
         .clock(clock),
-        .config_in(c_iot4),
-        .config_out(c_iot5),
+        .nreset(nreset),
+        .config_in(config_in),
+        .config_out(config_out),
         .config_enable(config_enable),
         .config_nreset(config_nreset)
     );

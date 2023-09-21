@@ -1,6 +1,6 @@
 `include "helpers.inc.v"
 
-module kFPGACore #(parameter WIDTH = 8, HEIGHT = 10, IO_PAIRS = 4, IC_PAIRS = 10, CLUSTER = 4, LUT_SIZE = 6) (
+module kFPGACore #(parameter WIDTH = 8, HEIGHT = 8, IO_PAIRS = 4, IC_PAIRS = 10, CLUSTER = 4, LUT_SIZE = 6) (
     input [WIDTH * IO_PAIRS - 1:0] data_north_in,
     output [WIDTH * IO_PAIRS - 1:0] data_north_out,
     input [HEIGHT * IO_PAIRS - 1:0] data_east_in,
@@ -30,7 +30,7 @@ module kFPGACore #(parameter WIDTH = 8, HEIGHT = 10, IO_PAIRS = 4, IC_PAIRS = 10
             .data_from_io(data_north_in[IO_PAIRS * (i + 1) - 1: IO_PAIRS * i]),
             .data_to_io(data_north_out[IO_PAIRS * (i + 1) - 1: IO_PAIRS * i]),
             .data_from_ic(from_north_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
-            .data_to_ic(from_north_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
+            .data_to_ic(to_north_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
             .clock(clock),
             .config_in(c_io_south[i]),
             .config_out(c_io_north[i]),
@@ -42,7 +42,7 @@ module kFPGACore #(parameter WIDTH = 8, HEIGHT = 10, IO_PAIRS = 4, IC_PAIRS = 10
             .data_from_io(data_south_in[IO_PAIRS * (i + 1) - 1: IO_PAIRS * i]),
             .data_to_io(data_south_out[IO_PAIRS * (i + 1) - 1: IO_PAIRS * i]),
             .data_from_ic(from_south_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
-            .data_to_ic(from_south_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
+            .data_to_ic(to_south_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
             .clock(clock),
             .config_in(i == 0 ? c_io_west[HEIGHT - 1] : c_io_north[i - 1]),
             .config_out(c_io_south[i]),
@@ -60,7 +60,7 @@ module kFPGACore #(parameter WIDTH = 8, HEIGHT = 10, IO_PAIRS = 4, IC_PAIRS = 10
             .data_from_io(data_east_in[IO_PAIRS * (i + 1) - 1: IO_PAIRS * i]),
             .data_to_io(data_east_out[IO_PAIRS * (i + 1) - 1: IO_PAIRS * i]),
             .data_from_ic(from_east_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
-            .data_to_ic(from_east_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
+            .data_to_ic(to_east_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
             .clock(clock),
             .config_in(i == 0 ? c_io_north[WIDTH - 1] : c_io_east[i - 1]),
             .config_out(c_io_east[i]),
@@ -72,7 +72,7 @@ module kFPGACore #(parameter WIDTH = 8, HEIGHT = 10, IO_PAIRS = 4, IC_PAIRS = 10
             .data_from_io(data_west_in[IO_PAIRS * (i + 1) - 1: IO_PAIRS * i]),
             .data_to_io(data_west_out[IO_PAIRS * (i + 1) - 1: IO_PAIRS * i]),
             .data_from_ic(from_west_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
-            .data_to_ic(from_west_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
+            .data_to_ic(to_west_ic[IC_PAIRS * (i + 1) - 1:IC_PAIRS * i]),
             .clock(clock),
             .config_in(i == 0 ? config_in : c_io_west[i - 1]),
             .config_out(c_io_west[i]),
