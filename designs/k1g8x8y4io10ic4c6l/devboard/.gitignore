@@ -1,0 +1,13 @@
+
+# Vivado
+#/.Xil/
+/devboard.cache/
+/devboard.hw/
+/devboard.ip_user_files/
+/devboard.runs/
+/devboard.srcs/
+vivado.jou
+vivado.log
+vivado_*.backup.jou
+vivado_*.backup.log
+vivado_pid*.str
