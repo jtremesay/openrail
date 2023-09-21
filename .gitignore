@@ -6,9 +6,3 @@
 
 # Reference codes
 /third-party/
-
-# Vivado
-/designs/*/.Xil/
-/designs/*/*/*.cache/
-/designs/*/*/*.hw/
-/designs/*/*/*.runs/
