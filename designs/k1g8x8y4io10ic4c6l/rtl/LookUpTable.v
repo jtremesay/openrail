@@ -1,14 +1,13 @@
-module LookUpTable(
-    input [5:0] data_in,
-    output data_out,
-    input [63:0] config_in
-);
-    // Dispatch the config 
-    wire [63:0] c_truth_table = config_in[63:0];
+`include "helpers.inc.v"
 
+module LookUpTable #(parameter WIDTH=6) (
+    input [WIDTH - 1:0] data_in,
+    output data_out,
+    input [`lut_conf(WIDTH) - 1:0] config_in
+);
     // Implement the LUT with a mux
-    Multiplexer #(.WIDTH(64)) lut(
-        .data_in(c_truth_table),
+    Multiplexer #(.WIDTH(`lut_conf(WIDTH))) lut(
+        .data_in(config_in),
         .data_out(data_out),
         .config_in(data_in)
     );

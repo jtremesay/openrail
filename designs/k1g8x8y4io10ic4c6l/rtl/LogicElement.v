@@ -1,17 +1,19 @@
-module LogicElement(
-    input [5:0] data_in,
+`include "helpers.inc.v"
+
+module LogicElement #(parameter WIDTH=6) (
+    input [WIDTH - 1:0] data_in,
     output data_out,
     input clock,
     input nreset,
-    input [64:0] config_in
+    input [`le_conf(WIDTH) - 1:0] config_in
 );
     // Dispatch the config 
-    wire [63:0] c_lut = config_in[63:0]; 
-    wire c_comb_out = config_in[64];
+    wire [`lut_conf(WIDTH) - 1:0] c_lut = config_in[`lut_conf(WIDTH) - 1:0]; 
+    wire c_comb_out = config_in[`lut_conf(WIDTH)];
 
     // Instantiate the LUT
     wire lut_z;
-    LookUpTable lut(
+    LookUpTable #(.WIDTH(WIDTH)) lut(
         .data_in(data_in),
         .data_out(lut_z),
         .config_in(c_lut)
