@@ -28,6 +28,6 @@ add_pdn_connect -grid {top} -layers {M5 M6}
 # LogicTile grid
 ####################################
 # The halo around the macro prevents pdn from blocking pin access
-define_pdn_grid -macro -cells LogicTile -halo "0.25 0.25 0.25 0.25" -voltage_domains {CORE} -name LogicTileGrid
+define_pdn_grid -macro -cells [list LogicTileWrapper IONorthTileWrapper IOSouthTileWrapper IOEastTileWrapper IOWestTileWrapper] -halo "0.25 0.25 0.25 0.25" -voltage_domains {CORE} -name MacrosGrid
 
-add_pdn_connect -grid {LogicTileGrid} -layers {M5 M6}
+add_pdn_connect -grid {MacrosGrid} -layers {M5 M6}
