@@ -7,3 +7,7 @@
 `define sb_ics_conf(ic_pairs, cluster) (ic_pairs * `sb_ic_conf(cluster))
 `define sb_conf(ic_pairs, cluster, lut_size) (`sb_les_conf(ic_pairs, cluster, lut_size) + `sb_ics_conf(ic_pairs, cluster) * 4)
 `define lt_conf(ic_pairs, cluster, lut_size) (`sb_conf(ic_pairs, cluster, lut_size) + `le_conf(lut_size) * cluster)
+
+`define io_ic_conf(io_pairs) (`mux_conf(io_pairs))
+`define io_io_conf(ic_pairs) (`mux_conf(ic_pairs))
+`define io_conf(io_pairs, ic_pairs) (`io_ic_conf(io_pairs) * ic_pairs + `io_io_conf(ic_pairs) * io_pairs)

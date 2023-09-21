@@ -26,7 +26,7 @@ module LogicColumn(
     // Instantiate the tiles
     wire [9:0] lt0_north_out;
     
-    LogicTile lt0(
+    LogicTileWrapper lt0(
         .data_north_in(lt1_south_out),
         .data_north_out(lt0_north_out),
         .data_east_in(data_east_in[9:0]),
@@ -45,7 +45,7 @@ module LogicColumn(
 
     wire [9:0] lt1_north_out;
     wire [9:0] lt1_south_out;
-    LogicTile lt1(
+    LogicTileWrapper lt1(
         .data_north_in(lt2_south_out),
         .data_north_out(lt1_north_out),
         .data_east_in(data_east_in[19:10]),
@@ -64,7 +64,7 @@ module LogicColumn(
 
     wire [9:0] lt2_north_out;
     wire [9:0] lt2_south_out;
-    LogicTile lt2(
+    LogicTileWrapper lt2(
         .data_north_in(lt3_south_out),
         .data_north_out(lt2_north_out),
         .data_east_in(data_east_in[29:20]),
@@ -83,7 +83,7 @@ module LogicColumn(
 
     wire [9:0] lt3_north_out;
     wire [9:0] lt3_south_out;
-    LogicTile lt3(
+    LogicTileWrapper lt3(
         .data_north_in(lt4_south_out),
         .data_north_out(lt3_north_out),
         .data_east_in(data_east_in[39:30]),
@@ -102,7 +102,7 @@ module LogicColumn(
 
     wire [9:0] lt4_north_out;
     wire [9:0] lt4_south_out;
-    LogicTile lt4(
+    LogicTileWrapper lt4(
         .data_north_in(lt5_south_out),
         .data_north_out(lt4_north_out),
         .data_east_in(data_east_in[49:40]),
@@ -121,7 +121,7 @@ module LogicColumn(
 
     wire [9:0] lt5_north_out;
     wire [9:0] lt5_south_out;
-    LogicTile lt5(
+    LogicTileWrapper lt5(
         .data_north_in(lt6_south_out),
         .data_north_out(lt5_north_out),
         .data_east_in(data_east_in[59:50]),
@@ -140,7 +140,7 @@ module LogicColumn(
 
     wire [9:0] lt6_north_out;
     wire [9:0] lt6_south_out;
-    LogicTile lt6(
+    LogicTileWrapper lt6(
         .data_north_in(lt7_south_out),
         .data_north_out(lt6_north_out),
         .data_east_in(data_east_in[69:60]),
@@ -159,7 +159,7 @@ module LogicColumn(
 
     
     wire [9:0] lt7_south_out;
-    LogicTile lt7(
+    LogicTileWrapper lt7(
         .data_north_in(data_north_in),
         .data_north_out(data_north_out),
         .data_east_in(data_east_in[79:70]),
