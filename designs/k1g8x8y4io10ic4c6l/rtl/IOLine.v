@@ -18,8 +18,7 @@ module IOLine(
     wire c_iot5; 
     wire c_iot6; 
 
-    
-    IOTile iot0(
+    IOTileWrapper iot0(
         .data_from_io(data_from_io[3:0]),
         .data_to_io(data_to_io[3:0]),
         .data_from_ic(data_from_ic[9:0]),
@@ -31,7 +30,7 @@ module IOLine(
         .config_nreset(config_nreset)
     );
     
-    IOTile iot1(
+    IOTileWrapper iot1(
         .data_from_io(data_from_io[7:4]),
         .data_to_io(data_to_io[7:4]),
         .data_from_ic(data_from_ic[19:10]),
@@ -43,7 +42,7 @@ module IOLine(
         .config_nreset(config_nreset)
     );
     
-    IOTile iot2(
+    IOTileWrapper iot2(
         .data_from_io(data_from_io[11:8]),
         .data_to_io(data_to_io[11:8]),
         .data_from_ic(data_from_ic[29:20]),
@@ -55,7 +54,7 @@ module IOLine(
         .config_nreset(config_nreset)
     );
     
-    IOTile iot3(
+    IOTileWrapper iot3(
         .data_from_io(data_from_io[15:12]),
         .data_to_io(data_to_io[15:12]),
         .data_from_ic(data_from_ic[39:30]),
@@ -67,7 +66,7 @@ module IOLine(
         .config_nreset(config_nreset)
     );
     
-    IOTile iot4(
+    IOTileWrapper iot4(
         .data_from_io(data_from_io[19:16]),
         .data_to_io(data_to_io[19:16]),
         .data_from_ic(data_from_ic[49:40]),
@@ -79,7 +78,7 @@ module IOLine(
         .config_nreset(config_nreset)
     );
     
-    IOTile iot5(
+    IOTileWrapper iot5(
         .data_from_io(data_from_io[23:20]),
         .data_to_io(data_to_io[23:20]),
         .data_from_ic(data_from_ic[59:50]),
@@ -91,7 +90,7 @@ module IOLine(
         .config_nreset(config_nreset)
     );
     
-    IOTile iot6(
+    IOTileWrapper iot6(
         .data_from_io(data_from_io[27:24]),
         .data_to_io(data_to_io[27:24]),
         .data_from_ic(data_from_ic[69:60]),
@@ -103,7 +102,7 @@ module IOLine(
         .config_nreset(config_nreset)
     );
     
-    IOTile iot7(
+    IOTileWrapper iot7(
         .data_from_io(data_from_io[31:28]),
         .data_to_io(data_to_io[31:28]),
         .data_from_ic(data_from_ic[79:70]),
